@@ -1,0 +1,104 @@
+.card {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.vr-button {
+  margin-top: 10px;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+  text-align: center;
+}
+.buy-button {
+  margin-top: 10px;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: darkorange;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+.label {
+  width: max-content;
+  color: tomato;
+  font-size: 13px;
+  border-bottom: 1px solid rgb(255, 209, 209);
+  margin: 3px 0;
+}
+
+.desc {
+  font-size: 14px;
+}
+
+.star {
+  color: gold;
+}
+
+.username {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+}
+
+form {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid gray ;
+}
+
+input::placeholder , textarea::placeholder{
+  font-size: 12px;
+ color:rgb(148, 139, 139)
+}
+
+.submitButton{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(245, 127, 127);
+ cursor: pointer
+}
+
+.button{
+  border:none;
+  padding: 8px;
+
+  border-radius: 5px;
+  color: white;
+cursor: pointer;
+}
+.logout{
+  background-color: tomato;
+}
+.login{
+margin-right: 10px;
+  background-color: blueviolet;
+
+}
+.register{
+  background-color: hotpink;
+}
+.buttons, .logout{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
