@@ -38,6 +38,4 @@ app.listen(PORT, ()=>{
 connectDB();
 
 //main route:
-app.use("/", (req,res)=>{
- res.send("Hello from the backend")
-});
+app.use("/", indexRouter);
