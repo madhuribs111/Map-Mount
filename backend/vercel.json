@@ -12,7 +12,6 @@
         "dest": "/",
         "methods": ["GET", "POST"]
       }
-    ],
-    "installCommmand": "npm install"
+    ]
   }
   
