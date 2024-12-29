@@ -19,7 +19,7 @@ const Register = ({setShowRegister}) => {
       password: passwordRef.current.value,
     };
     try {
-      await axios.post("user/create", newUser);
+      await axios.post("https://map-mount.vercel.app/user/create", newUser);
       setSuccess(true);
       setError(false)
     } catch (err) {
