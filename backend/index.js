@@ -8,27 +8,11 @@ dotenv.config()
 
 const PORT = process.env.PORT;
 const app = express()
-
+app.options('*', cors());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(cors(
-    {
-        origin: ['https://map-mount-frontend.vercel.app'],
-        methods: ["POST", "GET"],
-     allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
 
-        credentials: true
-    }
-))
-// app.use(
-//     cors({
-//       origin: ['http://localhost:3000'], // Allow your frontend origin
-//       methods: ["GET", "POST", "PUT", "DELETE"], // Include all methods your app uses
-//       allowedHeaders: ["Content-Type", "Authorization"], // Allow necessary headers
-//       credentials: true, // Enable sending cookies
-//     })
-//   );
-  
+
 // listen to a server
 app.listen(PORT, ()=>{
     console.log(`Server running on ${PORT}`)
@@ -38,4 +22,10 @@ app.listen(PORT, ()=>{
 connectDB();
 
 //main route:
-app.use("/", indexRouter);
+///app.use("/", indexRouter);
+app.use("/", cors({
+  origin: 'https://map-mount-frontend.vercel.app',
+  methods: ["POST", "GET"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}), indexRouter);
