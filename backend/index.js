@@ -23,9 +23,17 @@ connectDB();
 
 //main route:
 ///app.use("/", indexRouter);
-app.use("/api", cors({
+app.use(cors({
   origin: 'https://map-mount-frontend.vercel.app',
   methods: ["POST", "GET"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
-}),indexRouter);
+}));
+
+app.use("/api", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://map-mount-frontend.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+}, indexRouter);
