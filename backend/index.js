@@ -14,9 +14,9 @@ app.use(express.urlencoded({extended: true}))
 
 
 // listen to a server
-app.listen(PORT, ()=>{
-    console.log(`Server running on ${PORT}`)
-})
+// app.listen(PORT, ()=>{
+//     console.log(`Server running on ${PORT}`)
+// })
 
 //connect to the database
 connectDB();
