@@ -12,7 +12,7 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: 'https://map-mount-frontend.vercel.app', // Adjust origin to match your frontend
-  methods: ["POST", "GET", "PUT", "DELETE"],
+  methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
@@ -22,6 +22,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // Connect to the database
 connectDB();
+// Handle preflight OPTIONS requests
+app.options('*', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://map-mount-frontend.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.sendStatus(204); // No content
+});
 
 // Main route
 app.use("/api", indexRouter);
