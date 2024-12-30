@@ -23,11 +23,9 @@ connectDB();
 
 //main route:
 ///app.use("/", indexRouter);
-app.use("/", cors({
+app.use("/api", cors({
   origin: 'https://map-mount-frontend.vercel.app',
   methods: ["POST", "GET"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
-}), (req, res)=>{
-  res.send("Welcome to MapMount API")
-});
+}),indexRouter);

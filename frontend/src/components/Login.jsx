@@ -18,7 +18,7 @@ const Login = ({ setShowLogin, setCurrentUser, myStorage }) => {
     }
     try {
 
-    const res= await axios.post("https://map-mount.vercel.app/user/login", newUser);
+    const res= await axios.post("https://map-mount.vercel.app/api/user/login", newUser);
      myStorage.setItem('user', res.data.username)
        
         setCurrentUser(res.data.username);

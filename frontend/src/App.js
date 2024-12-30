@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get("https://map-mount.vercel.app/pins/get");
+        const res = await axios.get("https://map-mount.vercel.app/api/pins/get");
         console.log(res.data);
         setPins(res.data);
       } catch (err) {
@@ -68,7 +68,7 @@ function App() {
       long: newPlace.long,
     };
     try {
-      const res = await axios.post("https://map-mount.vercel.app/pins/create", newPin,{ withCredentials: true });
+      const res = await axios.post("https://map-mount.vercel.app/api/pins/create", newPin,{ withCredentials: true });
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
