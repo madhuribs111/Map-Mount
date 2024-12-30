@@ -13,7 +13,7 @@ export const register = async (req, res) => {
     if (!newlyRegistered) {
       return res.status(400).json("couldn't create user, something went wrong");
     }
-    res.status(201).json(newlyRegistered._id);
+    res.status(200).json(newlyRegistered._id);
   } catch (err) {
     res.status(500).json(err);
   }
