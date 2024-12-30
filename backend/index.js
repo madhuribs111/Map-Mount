@@ -28,4 +28,6 @@ app.use("/", cors({
   methods: ["POST", "GET"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
-}), indexRouter);
+}), (req, res)=>{
+  res.send("Welcome to MapMount API")
+});
