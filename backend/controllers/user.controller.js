@@ -4,16 +4,16 @@ import bcrypt from "bcryptjs";
 export const register = async (req, res) => {
   try {
     const hashed = await bcrypt.hash(req.body.password, 10);
-    const newlyRegistered = new User({
+    const newlyRegistered = new User.create({
       username: req.body.username,
       email: req.body.email,
       password: hashed,
     });
-    const newUser = await newlyRegistered.save(); // save to db
-    if (!newUser) {
+    //const newUser = await newlyRegistered.save(); // save to db
+    if (!newlyRegistered) {
       return res.status(400).json("couldn't create user, something went wrong");
     }
-    res.status(201).json(newUser._id);
+    res.status(201).json(newlyRegistered._id);
   } catch (err) {
     res.status(500).json(err);
   }
