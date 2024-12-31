@@ -35,11 +35,11 @@ app.options('*', (req, res) => {
 app.use("/api", indexRouter);
 
 // Local development: Uncomment for testing locally
-// if (process.env.NODE_ENV !== "production") {
-//   app.listen(PORT, () => {
-//     console.log(`Server running on http://localhost:${PORT}`);
-//   });
-// }
+
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+
 
 // Export for serverless environments
 export default app;
