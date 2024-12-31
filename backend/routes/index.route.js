@@ -6,4 +6,4 @@ const indexRouter = express.Router()
 app.use("/pins", pinRoute);
 app.use("/user", userRoute)
 
-export default indexRouter
+export {indexRouter}

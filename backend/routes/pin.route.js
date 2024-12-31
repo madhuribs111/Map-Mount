@@ -4,4 +4,4 @@ const pinRoute = express.Router()
 
 pinRoute.post("/create", createPin );
 pinRoute.get("/get", getPins)
-export default pinRoute
+export  {pinRoute}
