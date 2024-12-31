@@ -1,7 +1,7 @@
 import express from "express"
 import {createPin, getPins} from "../controllers/pin.controller.js";
-const router = express.Router()
+const pinRoute = express.Router()
 
-router.post("/create", createPin );
-router.get("/get", getPins)
-export default router
+pinRoute.post("/create", createPin );
+pinRoute.get("/get", getPins)
+export default pinRoute
