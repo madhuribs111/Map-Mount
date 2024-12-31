@@ -36,9 +36,9 @@ app.use("/api", indexRouter);
 
 // Local development: Uncomment for testing locally
 
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
+  // app.listen(PORT, () => {
+  //   console.log(`Server running on http://localhost:${PORT}`);
+  // });
 
 
 // Export for serverless environments
